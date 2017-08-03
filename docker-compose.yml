@@ -1,4 +1,9 @@
 version: '2'
+volumes:
+    am-pipeline-data:
+        external: true
 services:
   automation:
     build: './automation-tools/'
+    volumes:
+    - am-pipeline-data:/var/archivematica/sharedDirectory
