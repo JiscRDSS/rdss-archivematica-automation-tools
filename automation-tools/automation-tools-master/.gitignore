@@ -1,0 +1,13 @@
+*.py[co]
+*.swp
+*~
+
+# Eclipse IDE files
+.project
+.pydevproject
+.settings/
+
+# Sublime files
+*.sublime-*
+
+*.log.[0-9]
