@@ -1,4 +1,0 @@
--r base.txt
-ipython==1.0.0
-pytest
-vcrpy>=1.0.0

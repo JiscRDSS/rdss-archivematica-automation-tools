@@ -1,3 +1,0 @@
-requests<3.0
-sqlalchemy
-six
