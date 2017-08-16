@@ -4,8 +4,16 @@
 
 SS_URL="${AM_TOOLS_TRANSFER_SS_URL:-http://127.0.0.1:8000}"
 
+#
 # Use the Storage Service API to discover what the UUID is for the requested
-# transfer source, based on its description
+# transfer source, based on its description.
+#
+# Here we use `curl` to get a list of all storage locations, then use `jq` to
+# filter this list to just those that have the "purpose" of "TS" (transfer
+# source) and a "description" that matches that given in the environment
+# variable. Assuming we get one that does, we then select just the "uuid",
+# thereby giving us our selected transfer source id.
+#
 transfer_source_id=$(curl -k -s \
     -H "Authorization: ApiKey ${AM_TOOLS_TRANSFER_SS_USER}:${AM_TOOLS_TRANSFER_SS_API_KEY}" \
         ${SS_URL}/api/v2/location/ | \
