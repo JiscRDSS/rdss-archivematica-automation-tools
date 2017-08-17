@@ -4,7 +4,8 @@ AM_TOOLS_HOME="/usr/lib/archivematica/automation-tools"
 AM_TOOLS_CONF="/etc/archivematica/automation-tools"
 
 AM_SHARED_DIR="/var/archivematica/sharedDirectory"
-AM_PROCESSING_CONF="${AM_SHARED_DIR}/sharedMicroServiceTasksConfigs/processingMCPConfigs"
+AM_PROCESSING_CONF_DIR="${AM_SHARED_DIR}/sharedMicroServiceTasksConfigs/processingMCPConfigs"
+AM_PROCESSING_CONF_FILE="${AM_TOOLS_TRANSFER_PROCESSING_XML:-automatedProcessingMCP.xml}"
 
 # Create environment
 pip install -r "${AM_TOOLS_HOME}/requirements/base.txt"
@@ -16,9 +17,13 @@ cp "${AM_TOOLS_HOME}/etc/transfer-script.sh" "${AM_TOOLS_CONF}/"
 mkdir -p "/var/log/archivematica/automation-tools"
 mkdir -p "/var/archivematica/automation-tools"
 
-# Set up XML config files to define behaviour
-cp "${AM_PROCESSING_CONF}/defaultProcessingMCP.xml" \
+# Copy the given Processing XML to our transfer config directory
+cp "${AM_PROCESSING_CONF_DIR}/${AM_PROCESSING_CONF_FILE}" \
     "${AM_TOOLS_HOME}/transfers/pre-transfer/"
-chmod -x "${AM_TOOLS_HOME}/transfers/pre-transfer/defaultProcessingMCP.xml"
+chmod -x "${AM_TOOLS_HOME}/transfers/pre-transfer/${AM_PROCESSING_CONF_FILE}"
+
+# Copy and modify the python script that will load the processing XML into our transfer context
 cp "${AM_TOOLS_HOME}/transfers/examples/pre-transfer/default_config.py" \
-    "${AM_TOOLS_HOME}/transfers/pre-transfer/"
+    "${AM_TOOLS_HOME}/transfers/pre-transfer/mcp_config.py"
+sed "s/defaultProcessingMCP.xml/${AM_PROCESSING_CONF_FILE}/g" \
+    "${AM_TOOLS_HOME}/transfers/pre-transfer/mcp_config.py"

@@ -32,7 +32,8 @@ Environment Variables
 | `AM_TOOLS_TRANSFER_AM_URL` | The URL to use when connecting to the Archivematica Dashboard. | `http://127.0.0.1` |
 | `AM_TOOLS_TRANSFER_AM_USER` | The username to use when connecting to the Archivematica Dashboard. | None |
 | `AM_TOOLS_TRANSFER_DEPTH` | The "depth" to use for the transfer, as documented in the Automation Tools README. | `1` |
-| `AM_TOOLS_TRANSFER_PATH` | The path to use for the transfer, as documented in the Automation Tools README. | `''` |
+| `AM_TOOLS_TRANSFER_PATH` | The path to use for the transfer, as documented in the Automation Tools README. | `` |
+| `AM_TOOLS_TRANSFER_PROCESSING_XML` | The name of the XML file to use to configure the MCP during transfer. | `automatedProcessingMCP.xml` |
 | `AM_TOOLS_TRANSFER_SOURCE_DESCRIPTION` | The "description" of the transfer source defined in the Archivematica Storage Service to use as the source for automated transfers. Case sensitive. | None |
 | `AM_TOOLS_TRANSFER_SS_API_KEY` | The API key to use when connecting to the Archivematica Storage Service. | None |
 | `AM_TOOLS_TRANSFER_SS_URL` | The URL to use when connecting to the Archivematica Storage Service. | `http://127.0.0.1:8000` |
@@ -79,6 +80,7 @@ Here's an example of how this image can be used in a Docker Compose configuratio
 	      AM_TOOLS_TRANSFER_AM_API_KEY: "test"
 	      AM_TOOLS_TRANSFER_AM_URL: "http://archivematica"
 	      AM_TOOLS_TRANSFER_AM_USER: "test"
+	      AM_TOOLS_TRANSFER_PROCESSING_XML: "my_custom_processing_mcp.xml"
 	      AM_TOOLS_TRANSFER_SOURCE_DESCRIPTION: "automated workflow"
 	      AM_TOOLS_TRANSFER_SS_API_KEY: "test"
 	      AM_TOOLS_TRANSFER_SS_URL: "http://archivematica-storage-service:8000"
