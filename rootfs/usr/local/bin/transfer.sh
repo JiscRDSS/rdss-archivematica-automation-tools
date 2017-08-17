@@ -35,7 +35,7 @@ python -m transfers.transfer \
   --ss-api-key "${AM_TOOLS_TRANSFER_SS_API_KEY}" \
   --ss-url "${SS_URL}" \
   --ss-user "${AM_TOOLS_TRANSFER_SS_USER}" \
-  --transfer-path "${AM_TOOLS_TRANSFER_PATH:-''}" \
+  --transfer-path "${AM_TOOLS_TRANSFER_PATH}" \
   --transfer-source "${transfer_source_id}" \
   --transfer-type "${AM_TOOLS_TRANSFER_TYPE:-standard}" \
   --user "${AM_TOOLS_TRANSFER_AM_USER}"
