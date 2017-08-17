@@ -25,5 +25,5 @@ chmod -x "${AM_TOOLS_HOME}/transfers/pre-transfer/${AM_PROCESSING_CONF_FILE}"
 # Copy and modify the python script that will load the processing XML into our transfer context
 cp "${AM_TOOLS_HOME}/transfers/examples/pre-transfer/default_config.py" \
     "${AM_TOOLS_HOME}/transfers/pre-transfer/mcp_config.py"
-sed "s/defaultProcessingMCP.xml/${AM_PROCESSING_CONF_FILE}/g" \
+sed -i "s/defaultProcessingMCP.xml/${AM_PROCESSING_CONF_FILE}/" \
     "${AM_TOOLS_HOME}/transfers/pre-transfer/mcp_config.py"
