@@ -17,10 +17,9 @@ cp "${AM_TOOLS_HOME}/etc/transfer-script.sh" "${AM_TOOLS_CONF}/"
 mkdir -p "/var/log/archivematica/automation-tools"
 mkdir -p "/var/archivematica/automation-tools"
 
-# Copy the given Processing XML to our transfer config directory
-cp "${AM_PROCESSING_CONF_DIR}/${AM_PROCESSING_CONF_FILE}" \
+# Link to the given Processing XML in our transfer config directory
+ln -s "${AM_PROCESSING_CONF_DIR}/${AM_PROCESSING_CONF_FILE}" \
     "${AM_TOOLS_HOME}/transfers/pre-transfer/"
-chmod -x "${AM_TOOLS_HOME}/transfers/pre-transfer/${AM_PROCESSING_CONF_FILE}"
 
 # Copy and modify the python script that will load the processing XML into our transfer context
 cp "${AM_TOOLS_HOME}/transfers/examples/pre-transfer/default_config.py" \
