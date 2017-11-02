@@ -1,0 +1,10 @@
+---
+language: bash
+
+script:
+ # Use ShellCheck to validate the scripts we build into the docker image
+ - find rootfs \( -name \*.sh -or -name \*.bash \) -exec shellcheck {} +
+
+notifications:
+  email: false
+
