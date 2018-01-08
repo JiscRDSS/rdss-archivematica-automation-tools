@@ -32,7 +32,8 @@ Environment Variables
 | `AM_TOOLS_TRANSFER_AM_URL` | The URL to use when connecting to the Archivematica Dashboard. | `http://127.0.0.1` |
 | `AM_TOOLS_TRANSFER_AM_USER` | The username to use when connecting to the Archivematica Dashboard. | None |
 | `AM_TOOLS_TRANSFER_DEPTH` | The "depth" to use for the transfer, as documented in the Automation Tools README. | `1` |
-| `AM_TOOLS_TRANSFER_PATH` | The path to use for the transfer, as documented in the Automation Tools README. | `` |
+| `AM_TOOLS_TRANSFER_LOG_LEVEL` | The log level to use when running transfers, one of `ERROR`, `WARNING`, `INFO` or `DEBUG`. | `INFO` |
+| `AM_TOOLS_TRANSFER_PATH` | The path to use for the transfer, as documented in the Automation Tools README. | `None` |
 | `AM_TOOLS_TRANSFER_PROCESSING_XML` | The name of the XML file to use to configure the MCP during transfer. | `automatedProcessingMCP.xml` |
 | `AM_TOOLS_TRANSFER_SOURCE_DESCRIPTION` | The "description" of the transfer source defined in the Archivematica Storage Service to use as the source for automated transfers. Case sensitive. | None |
 | `AM_TOOLS_TRANSFER_SS_API_KEY` | The API key to use when connecting to the Archivematica Storage Service. | None |
