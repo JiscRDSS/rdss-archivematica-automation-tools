@@ -11,7 +11,6 @@ AM_PROCESSING_CONF_FILE="${AM_TOOLS_TRANSFER_PROCESSING_XML:-automatedProcessing
 pip install -r "${AM_TOOLS_HOME}/requirements/base.txt"
 mkdir -p "${AM_TOOLS_CONF}"
 cp "${AM_TOOLS_HOME}/etc/transfers.conf" "${AM_TOOLS_CONF}/"
-cp "${AM_TOOLS_HOME}/etc/transfer-script.sh" "${AM_TOOLS_CONF}/"
 
 # Set up logging
 mkdir -p "/var/log/archivematica/automation-tools"

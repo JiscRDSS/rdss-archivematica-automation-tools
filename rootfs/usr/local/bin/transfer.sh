@@ -32,10 +32,12 @@ python -m transfers.transfer \
   --api-key "${AM_TOOLS_TRANSFER_AM_API_KEY}" \
   --config-file "/etc/archivematica/automation-tools/transfers.conf" \
   --depth "${AM_TOOLS_TRANSFER_DEPTH:-1}" \
+  --log-level "${AM_TOOLS_TRANSFER_LOG_LEVEL:-INFO}" \
   --ss-api-key "${AM_TOOLS_TRANSFER_SS_API_KEY}" \
   --ss-url "${SS_URL}" \
   --ss-user "${AM_TOOLS_TRANSFER_SS_USER}" \
   --transfer-path "${AM_TOOLS_TRANSFER_PATH}" \
   --transfer-source "${transfer_source_id}" \
   --transfer-type "${AM_TOOLS_TRANSFER_TYPE:-standard}" \
+  --verbose \
   --user "${AM_TOOLS_TRANSFER_AM_USER}"
