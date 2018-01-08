@@ -2,7 +2,18 @@ FROM python:2-alpine
 
 MAINTAINER Arkivum Limited
 
-RUN apk update && apk add curl jq
+RUN apk add --no-cache \
+        curl \
+        gcc \
+        jq \
+        libxml2 \
+        libxml2-dev \
+        libxslt \
+        libxslt-dev \
+        linux-headers \
+        musl-dev \
+    && pip install -U \
+        lxml
 
 COPY ./automation-tools /usr/lib/archivematica/automation-tools
 
