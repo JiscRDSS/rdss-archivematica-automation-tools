@@ -27,7 +27,7 @@ echo "Using transfer source id '${transfer_source_id}'"
 
 # Found the transfer source, do the transfer
 cd /usr/lib/archivematica/automation-tools/ && \
-python -m transfers.transfer \
+python -m transfers.transfer_async \
   --am-url "${AM_TOOLS_TRANSFER_AM_URL:-http://127.0.0.1}" \
   --api-key "${AM_TOOLS_TRANSFER_AM_API_KEY}" \
   --config-file "/etc/archivematica/automation-tools/transfers.conf" \
